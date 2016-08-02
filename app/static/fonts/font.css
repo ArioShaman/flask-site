@@ -1,0 +1,42 @@
+@font-face{
+		font-family: Lobster-Regular;
+		src:url(style/fonts/Lobster-Regular.ttf);
+		}
+
+@font-face{
+		font-family: Opal;
+		src:url(style/fonts/Opal.ttf);
+		}
+
+
+@font-face{
+		font-family: Bloggersans;
+		src:url(style/fonts/Bloggersans.ttf);
+		}
+
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+
+.my_logo_text{
+	font-family: 'Yellowtail', cursive;
+	margin-top: -5px;
+	padding-bottom: 30px;
+	font-size: 45px;
+	color: #3B70BA;
+	text-decoration: none;
+
+}
+.menu_text{
+	font-family: 'Bloggersans', 500 italic;
+	font-size: 20px;
+	color: #3B70BA;
+}
+div ul li .menu_text:hover{
+	background-color: #8DDCEC;
+}
+.logo_text_2 {
+    display: block;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
