@@ -33,12 +33,23 @@
                             Vocabulary
                         </a>
                     </li>
+                    {% if session.loged_in %}
                     <li class="page-scroll">
-                        <a href="/login">
-                            <i class="fa fa-expeditedssl fa-2x" aria-hidden="true"></i>
-                            log in
-                        </a>
+                        <a href="/logout">
+                                <i class="fa fa-expeditedssl fa-2x" aria-hidden="true"></i>
+                                logout
+                            </a>
                     </li>
+                    {% endif%}
+                    {% if not session.loged_in %}
+                    <li class="page-scroll">
+                            <a href="/login_page">
+                                <i class="fa fa-expeditedssl fa-2x" aria-hidden="true"></i>
+                                log in
+                            </a>
+                        
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

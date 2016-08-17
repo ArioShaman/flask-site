@@ -15,65 +15,73 @@
 	               		<hr class="star-light star-light-color">
 	               	</div>
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					{% if error %}
+					    <p class="my_error">{{ error }}</p>
+					  {% endif %}
+					<form class="form-horizontal" method="post" action="/register">
 						
-						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon reg-container"><i class="fa fa-user fa icon-color" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+							<div class="form-group">
+								<label for="name" class="cols-sm-2 control-label">Your Name</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon reg-container"><i class="fa fa-user fa icon-color" aria-hidden="true"></i></span>
+										    {{ form.first_last_name(class_="form-control")}}	
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon reg-container"><i class="fa fa-envelope fa icon-color" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+							<div class="form-group">
+								<label for="email" class="cols-sm-2 control-label">Your Email</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon reg-container"><i class="fa fa-envelope fa icon-color" aria-hidden="true"></i></span>
+										{{ form.email(class_="form-control")}}	
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon reg-container"><i class="fa fa-users fa icon-color" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+							<div class="form-group">
+								<label for="username" class="cols-sm-2 control-label">Username</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon reg-container"><i class="fa fa-users fa icon-color" aria-hidden="true"></i></span>
+										{{ form.nickname(class_="form-control")}}
+										</input>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon reg-container"><i class="fa fa-lock fa-lg icon-color" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+							<div class="form-group">
+								<label for="password" class="cols-sm-2 control-label">Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon reg-container"><i class="fa fa-lock fa-lg icon-color" aria-hidden="true"></i></span>
+										
+										{{ form.password(class_="form-control")}}	
+										</input>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon reg-container"><i class="fa fa-lock fa-lg icon-color" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+							<div class="form-group">
+								<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon reg-container"><i class="fa fa-lock fa-lg icon-color" aria-hidden="true"></i></span>
+										{{ form.confirm(class_="form-control")}}
+										</input>
+									</div>
 								</div>
 							</div>
-						</div>
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button my-button">Register</button>
+							<button type="submit" value="Register" class="btn btn-primary btn-lg btn-block login-button my-button">Register</button>
 						</div>
 						<div class="login-register">
-				            <a href="/login" class="log-size">Login</a>
+				            <a href="/login_page" class="log-size">Login</a>
 				         </div>
 					</form>
+
 				</div>
 			</div>
 		</div>

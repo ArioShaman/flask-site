@@ -19,7 +19,16 @@
                     <div class="intro-text">
                         <span class="name">Welkome to BrEnglish</span>
                         <hr class="star-light">
-                        <span class="skills">Бла бла</span>
+                        <span class="skills">
+
+                            {% if session.loged_in %}
+                                Hi, {{session.username}}
+                            {% endif%}
+                            {% if not session.loged_in %}
+                               Hi, Guest
+                            {% endif %}
+                        </span>
+                        
                     </div>
                 </div>
             </div>

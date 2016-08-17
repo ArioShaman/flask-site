@@ -39,6 +39,13 @@
 .marg-100{
 	margin-top: 100px;
 }
+.my_error{
+	color: #B10B0B;
+	font-size: 15px;
+	margin-left: 20px;
+	font-family: 'Bloggersans';
+}
+
 /*h1*/
 .title { 
 	font-size: 50px;
