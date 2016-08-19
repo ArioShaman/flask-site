@@ -18,6 +18,35 @@ def valid_name_password(self):
 	else:
 		return None
 
+def valid_name(self):
+    final = []
+    one = []
+    for x in stroke:
+        one.append(x.encode('utf-8'))
+    
+        
+    for i in one:
+        
+        st = re.findall(r'[a-zA-Z]',i)
+        if st:
+            final.append(st[0])
+        mt = re.findall(r'\s',i)
+        if mt:
+            final.append(mt[0])
+            
+        rt = re.findall(r'[а-яА-Я]',i)
+        if rt:
+            final.append(rt[0])
+            
+            
+        dt = re.findall(r'[А-Я]',i)
+        
+            
+    if len(final) == len(one):
+        print 'все гуд'
+    else:
+        print 'что-то не так'
+
 @app.route('/')
 def index():
 	return render_template('index.html')
@@ -26,6 +55,7 @@ def index():
 def loginpage():
 	form = LoginForm()
 	return render_template('login.html',form = form)
+
 
 
 
