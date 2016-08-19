@@ -8,7 +8,7 @@ from app.models import User
 
 class RegistrationForm(Form):
     first_last_name = StringField('FIO',[validators.Length(min = 10, max = 24)],render_kw={"placeholder": "Enter your last and first Name"})
-    nickname = StringField('nickname', [validators.Length(min = 4, max = 25)],render_kw={"placeholder": "Enter your Email"})
+    username = StringField('Username', [validators.Length(min = 4, max = 25)],render_kw={"placeholder": "Enter your Username"})
     email = StringField('Email Address', [validators.Length(min = 6, max = 35)],render_kw={"placeholder": "Enter your Email"})
     password = PasswordField('New Password', [
         validators.DataRequired(),

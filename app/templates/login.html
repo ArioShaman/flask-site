@@ -16,7 +16,12 @@
 	               		<hr class="star-light star-light-color">
 	               	</div>
 				<div class="main-login main-center">
-					<!--{% from "_formhelpers.html" import render_field %}-->
+					
+					{% if error %}
+						<div class="back_error">
+					    	<p class="my_error">{{ error }}</p>
+					    </div>
+					  {% endif %}
 					<form class="form-horizontal" method="post" action="/login">
 						
 						<div class="form-group">

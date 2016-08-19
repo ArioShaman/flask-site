@@ -2,7 +2,7 @@ from app import db
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.security import Security, SQLAlchemyUserDatastore, UserMixin, RoleMixin, login_required
-
+from flask.ext.bcrypt import generate_password_hash, check_password_hash
 
 ROLE_USER = 0
 ROLE_ADMIN = 1
@@ -15,10 +15,10 @@ class User(db.Model):
     password = db.Column(db.String(255))
     role = db.Column(db.Integer, default = ROLE_USER) 
     def __repr__(self):
-        return '<User %r>' % (self.nickname)
+        return '<User %r>' % (self.username)
     def __init__(self , username ,password , email,role,first_last_name):
         self.first_last_name = first_last_name
-        self.nickname = username
+        self.username = username
         self.password = password
         self.email = email
         self.role = role
@@ -34,6 +34,13 @@ class User(db.Model):
  
     def get_id(self):
         return unicode(self.id)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+
+    @staticmethod
+    def hash_password(password):
+        return generate_password_hash(password)
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)

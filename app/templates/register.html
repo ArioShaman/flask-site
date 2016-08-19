@@ -16,9 +16,11 @@
 	               	</div>
 				<div class="main-login main-center">
 					{% if error %}
-					    <p class="my_error">{{ error }}</p>
+						<div class="back_error">
+					    	<p class="my_error">{{ error }}</p>
+					    </div>
 					  {% endif %}
-					<form class="form-horizontal" method="post" action="/register">
+					<form class="form-horizontal " method="post" action="/register">
 						
 							<div class="form-group">
 								<label for="name" class="cols-sm-2 control-label">Your Name</label>
@@ -45,7 +47,7 @@
 								<div class="cols-sm-10">
 									<div class="input-group">
 										<span class="input-group-addon reg-container"><i class="fa fa-users fa icon-color" aria-hidden="true"></i></span>
-										{{ form.nickname(class_="form-control")}}
+										{{form.username(class_="form-control")}}
 										</input>
 									</div>
 								</div>
