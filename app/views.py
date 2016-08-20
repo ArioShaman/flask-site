@@ -18,7 +18,31 @@ def valid_name_password(self):
 	else:
 		return None
 
+def valid_name(stroke):
+    final = []
+    L = []
+    print len(stroke)
+    for n in xrange(len(stroke)):
+        r = stroke[n]
+        L.append(r)
+    print L, len(L)
 
+        
+    for i in L:
+        
+        st = re.findall(r'[a-zA-Z]',i)
+        if st:
+            final.append(st[0])
+        mt = re.findall(r'\s',i)
+        if mt:
+            final.append(mt[0])
+            
+    print final,'final'
+            
+    if len(final) == len(L):
+        return True
+    else:
+        return None
 
 @app.route('/')
 def index():
@@ -88,12 +112,14 @@ def register():
 		error = u'Пользователь с таким username уже существует'
 		form = RegistrationForm()
 		return render_template('register.html', form = form, error = error)
-
-	else:
-		error = u'Имя и фамилия должны состоять только из букв(кирилица/ латиница) и пробелов'
+	
+	if not valid_name(name):
+		error = u'Придумаете имя и фамилию состоящию только из латинских букв'
 		form = RegistrationForm()
 		return render_template('register.html', form = form, error = error)
-	
+
+
+
 	if valid_name_password(username):
 		error = u'Никнейм должен состоять только из букв латиницы и цифр'
 		form = RegistrationForm()
