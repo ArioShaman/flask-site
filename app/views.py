@@ -18,34 +18,7 @@ def valid_name_password(self):
 	else:
 		return None
 
-def valid_name(self):
-    final = []
-    one = []
-    for x in stroke:
-        one.append(x.encode('utf-8'))
-    
-        
-    for i in one:
-        
-        st = re.findall(r'[a-zA-Z]',i)
-        if st:
-            final.append(st[0])
-        mt = re.findall(r'\s',i)
-        if mt:
-            final.append(mt[0])
-            
-        rt = re.findall(r'[а-яА-Я]',i)
-        if rt:
-            final.append(rt[0])
-            
-            
-        dt = re.findall(r'[А-Я]',i)
-        
-            
-    if len(final) == len(one):
-        print 'все гуд'
-    else:
-        print 'что-то не так'
+
 
 @app.route('/')
 def index():
@@ -59,14 +32,11 @@ def loginpage():
 
 
 
-@app.route('/getuser')
+@app.route('/session')
 def getuser():
-	user = User.query.filter_by(username='admidsadsn').first()
-	if user:
-		return render_template('login_error.html', user = user)
-	if not user:
-		return render_template('login_error.html', user = user)
-
+	get = session['username']
+	render_template('login_error', get = get)
+	
 
 @lm.user_loader
 def load_user(id):
@@ -119,7 +89,11 @@ def register():
 		form = RegistrationForm()
 		return render_template('register.html', form = form, error = error)
 
-
+	else:
+		error = u'Имя и фамилия должны состоять только из букв(кирилица/ латиница) и пробелов'
+		form = RegistrationForm()
+		return render_template('register.html', form = form, error = error)
+	
 	if valid_name_password(username):
 		error = u'Никнейм должен состоять только из букв латиницы и цифр'
 		form = RegistrationForm()
