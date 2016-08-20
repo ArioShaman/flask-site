@@ -21,7 +21,7 @@
 					    </div>
 					  {% endif %}
 					<form class="form-horizontal " method="post" action="/register">
-						
+							{{ form.csrf_token }}
 							<div class="form-group">
 								<label for="name" class="cols-sm-2 control-label">Your Name</label>
 								<div class="cols-sm-10">

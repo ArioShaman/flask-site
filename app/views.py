@@ -75,6 +75,14 @@ def logout():
     session.pop('password', None)
     return redirect(url_for('index')) 
 
+@app.route('/getrole')
+def getrole():
+	user = User.query.filter_by(username=session['username']).first()
+	user = user.getrole()
+	return render_template('login_error.html',user = user)
+
+
+
 @app.route('/login',methods=['GET','POST'])
 def login():
 	if request.method == 'GET':
