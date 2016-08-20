@@ -53,14 +53,11 @@ def loginpage():
 	form = LoginForm()
 	return render_template('login.html',form = form)
 
+@app.route('/register_page')
+def registerpage():
+	form = RegistrationForm()
+	return render_template('register.html',form = form)
 
-
-
-@app.route('/session')
-def getuser():
-	get = session['username']
-	render_template('login_error', get = get)
-	
 
 @lm.user_loader
 def load_user(id):
@@ -74,14 +71,6 @@ def logout():
     session.pop('username',None)
     session.pop('password', None)
     return redirect(url_for('index')) 
-
-@app.route('/getrole')
-def getrole():
-	user = User.query.filter_by(username=session['username']).first()
-	user = user.getrole()
-	return render_template('login_error.html',user = user)
-
-
 
 @app.route('/login',methods=['GET','POST'])
 def login():
@@ -159,7 +148,16 @@ def register():
 	return render_template('index.html')
 
 
-@app.route('/register_page')
-def registerpage():
-	form = RegistrationForm()
-	return render_template('register.html',form = form)
+@app.route('/user/<username>')
+@login_required
+def user(username):
+	user = User.query.filter_by(username = username).first()
+	if user == None:
+		error = 'Пользователь не найден'
+		return render_template('login_error.html', error = error)
+	sigin_user = User.query.filter_by(username = session['username']).first()
+	if sigin_user.getrole() == 0:
+		return render_template('user_profile.html')
+	if sigin_user.getrole() == 1:
+		return render_template('admin_profile.html')
+	
