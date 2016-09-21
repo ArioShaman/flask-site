@@ -18,6 +18,16 @@
 	width: 100%;
 	height: 900px;
 }
+.background-3{
+	background-color: #18BC9C;
+	width: 100%;
+	height: 1200px;
+}
+.test-color{
+	height: 190px;
+	margin-top: 150px;
+	box-shadow: 0 0 3 3;
+}
 .icon-color{
 	color: #2C3E50;
 }
@@ -110,4 +120,129 @@ input::-webkit-input-placeholder {
 
 .my-icon-1{
 	margin-top: -15px;
+}
+.img-back{
+	height: 170px;
+	
+	box-shadow: 0 0 4px;
+}
+.white-box{
+	min-height: 115px;
+	max-height: 160px;
+	background-color: white;
+}
+.width{
+	width: 100%;
+}
+.fon-photo{
+	background-image: url(img/profile-back.jpg);
+	background-origin: padding-box;
+	background-size: cover;
+
+}
+
+.ava-back{
+	height: 180px;
+	width: 180px;
+	background-color: white;
+	border-radius: 9px;
+	margin-top: 65px;
+	margin-left: 50px;
+	
+	
+}
+.ava-style{
+	height: 160px;
+	width: 160px;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-radius: 9px;
+}
+.data-profile{
+	height: 150px;
+	background-color: #EFECEB;
+}
+
+.content-info{
+	background-color: white;
+	min-height: 115px;
+	max-height: 160px;
+}
+.content-profile{
+	background-color: white;
+	height: 800px;
+}
+
+.heigh{
+	height: 115px;
+}
+.white{
+	background-color: white;
+}
+.empty{
+	height: 95px;
+}
+.title-h{
+	padding-top: 10px;
+}
+.name{
+
+	padding-left: 5px;
+}
+.town{
+
+}
+
+.profile-button{
+	background-color: #2C3E50;
+	height: 80px;
+
+}
+.profile-b-t{
+	
+}
+.profile-b-t:hover{
+	background-color: #1563B2;
+	color: #2C3E50;
+}
+.voc{
+	padding-left: 27%;
+}
+.friends{
+	padding-left: 40%;
+}
+.album{
+	padding-left: 45%;
+}
+.posts{
+	padding-left: 45%;
+}
+.icon-p{
+	padding-left: 48%;
+	padding-top: 12px;
+}
+.icon-p-2{
+	padding-top: 12px;
+	padding-left: 52%;
+}
+.conf-btn{
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+	background-color: #18BC9C; 
+	margin-left: 10px;
+	
+}
+.conf-btn:hover{
+	background-color: #2C3E50;
+	margin-top: 6px;
+	margin-left: 16px;
+}
+.conf-icon:hover{
+	color: #18BC9C;
+}
+.conf-icon{
+	color:#2C3E50;
+	padding-left: 7px;
+	padding-top: 4px;
 }

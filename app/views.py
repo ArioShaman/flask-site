@@ -75,7 +75,8 @@ def logout():
 @app.route('/login',methods=['GET','POST'])
 def login():
 	if request.method == 'GET':
-		return render_template('login.html')
+		form = LoginForm()
+		return render_template('login.html',form = form)
 	username = request.form['username']
 	password = request.form['password']
 	auth_user = User.query.filter_by(username=username).first()

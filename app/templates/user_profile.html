@@ -1,1 +1,91 @@
-user
+<!DOCTYPE html>
+<html>
+<head>
+	{% include 'mini-temp/head.html' %}
+	<title>profile</title>
+</head>
+<body>
+{% include 'mini-temp/navbar.html' %}
+
+<div class="background-3">
+	<div class="container">
+		<div class="row">
+			<div class="test-color fon-photo">
+				<div class="row">
+					<div class="ava-back">
+						<img src="{{url_for('static',filename='img/ava.jpg')}}" class="ava-style">
+					</div>
+				</div>
+
+			</div>
+			<div class="white-box">
+				<div class="col-md-4 col-lg-4 col-sm-4 empty">
+					<a href="#">
+						<div class="conf-btn">
+							<i class="fa fa-cog fa-3x conf-icon" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="content-info col-md-8 col-lg-8 col-sm-8">
+					<div class="title-h">
+					<div class="col-md-6 col-lg-6 col-xs-6">
+						<p class="name">
+							Name: Dan Matweyw
+						</p>
+					</div>
+					<div class="col-md-6 col-lg-6 col-xs-6">
+						<p class="town">City: Rostov-na-Donu</p>
+					</div>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div id="header">
+				<a href="#">
+					<div class=" profile-b-t col-md-3 col-lg-3 col-sm-3 col-xs-6 profile-button">
+					<i class="fa fa-pencil-square-o fa-2x icon-p" aria-hidden="true"></i>
+					<p class="voc">Vocabulary</p>
+					</div>
+				</a>
+
+				<a href="#">
+					<div class=" profile-b-t col-md-3 col-lg-3 col-sm-3 col-xs-6 profile-button">
+					<i class="fa fa-user fa-2x icon-p-2" aria-hidden="true"></i>
+					<p class="friends">Friends</p>
+					</div>
+				</a>
+
+				<a href="#">
+					<div class=" profile-b-t col-md-3 col-lg-3 col-sm-3 col-xs-6 profile-button">
+					<i class="fa fa-picture-o fa-2x icon-p-2" aria-hidden="true"></i>
+					<p class="album">Album</p>
+					</div>
+				</a>
+ 
+				<a href="#">
+					<div class=" profile-b-t col-md-3 col-lg-3 col-sm-3 col-xs-6 profile-button">
+					<i class="fa fa-sticky-note-o fa-2x icon-p-2" aria-hidden="true"></i>
+					<p class="posts">Posts</p>
+					</div>
+				</a>
+					
+			</div>
+
+			<div class="content-profile">
+				
+			</div>
+		</div>
+
+</div>
+
+
+
+
+
+
+	
+	{% include 'mini-temp/scripts.html' %}
+		
+</body>
+</html>
